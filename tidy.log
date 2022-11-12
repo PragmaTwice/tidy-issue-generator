@@ -1,0 +1,1742 @@
+Enabled checks:
+    clang-analyzer-core.CallAndMessage
+    clang-analyzer-core.CallAndMessageModeling
+    clang-analyzer-core.DivideZero
+    clang-analyzer-core.DynamicTypePropagation
+    clang-analyzer-core.NonNullParamChecker
+    clang-analyzer-core.NonnilStringConstants
+    clang-analyzer-core.NullDereference
+    clang-analyzer-core.StackAddrEscapeBase
+    clang-analyzer-core.StackAddressEscape
+    clang-analyzer-core.UndefinedBinaryOperatorResult
+    clang-analyzer-core.VLASize
+    clang-analyzer-core.builtin.BuiltinFunctions
+    clang-analyzer-core.builtin.NoReturnFunctions
+    clang-analyzer-core.uninitialized.ArraySubscript
+    clang-analyzer-core.uninitialized.Assign
+    clang-analyzer-core.uninitialized.Branch
+    clang-analyzer-core.uninitialized.CapturedBlockVariable
+    clang-analyzer-core.uninitialized.UndefReturn
+    clang-analyzer-cplusplus.InnerPointer
+    clang-analyzer-cplusplus.Move
+    clang-analyzer-cplusplus.NewDelete
+    clang-analyzer-cplusplus.NewDeleteLeaks
+    clang-analyzer-cplusplus.PlacementNew
+    clang-analyzer-cplusplus.PureVirtualCall
+    clang-analyzer-cplusplus.SelfAssignment
+    clang-analyzer-cplusplus.SmartPtrModeling
+    clang-analyzer-cplusplus.VirtualCallModeling
+    clang-analyzer-deadcode.DeadStores
+    clang-analyzer-nullability.NullPassedToNonnull
+    clang-analyzer-nullability.NullReturnedFromNonnull
+    clang-analyzer-nullability.NullabilityBase
+    clang-analyzer-nullability.NullableDereferenced
+    clang-analyzer-nullability.NullablePassedToNonnull
+    clang-analyzer-nullability.NullableReturnedFromNonnull
+    clang-analyzer-security.FloatLoopCounter
+    clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
+    clang-analyzer-security.insecureAPI.SecuritySyntaxChecker
+    clang-analyzer-security.insecureAPI.UncheckedReturn
+    clang-analyzer-security.insecureAPI.bcmp
+    clang-analyzer-security.insecureAPI.bcopy
+    clang-analyzer-security.insecureAPI.bzero
+    clang-analyzer-security.insecureAPI.decodeValueOfObjCType
+    clang-analyzer-security.insecureAPI.getpw
+    clang-analyzer-security.insecureAPI.gets
+    clang-analyzer-security.insecureAPI.mkstemp
+    clang-analyzer-security.insecureAPI.mktemp
+    clang-analyzer-security.insecureAPI.rand
+    clang-analyzer-security.insecureAPI.strcpy
+    clang-analyzer-security.insecureAPI.vfork
+    clang-analyzer-unix.API
+    clang-analyzer-unix.DynamicMemoryModeling
+    clang-analyzer-unix.Malloc
+    clang-analyzer-unix.MallocSizeof
+    clang-analyzer-unix.MismatchedDeallocator
+    clang-analyzer-unix.Vfork
+    clang-analyzer-unix.cstring.BadSizeArg
+    clang-analyzer-unix.cstring.CStringModeling
+    clang-analyzer-unix.cstring.NullArg
+    clang-analyzer-valist.CopyToSelf
+    clang-analyzer-valist.Uninitialized
+    clang-analyzer-valist.Unterminated
+    clang-analyzer-valist.ValistBase
+    cppcoreguidelines-init-variables
+    cppcoreguidelines-interfaces-global-init
+    cppcoreguidelines-macro-usage
+    cppcoreguidelines-narrowing-conversions
+    cppcoreguidelines-no-malloc
+    cppcoreguidelines-slicing
+    cppcoreguidelines-special-member-functions
+    google-build-explicit-make-pair
+    google-default-arguments
+    google-explicit-constructor
+    modernize-avoid-bind
+    modernize-loop-convert
+    modernize-make-shared
+    modernize-make-unique
+    modernize-pass-by-value
+    modernize-redundant-void-arg
+    modernize-return-braced-init-list
+    modernize-use-auto
+    modernize-use-bool-literals
+    modernize-use-emplace
+    modernize-use-equals-default
+    modernize-use-equals-delete
+    modernize-use-nullptr
+    modernize-use-override
+    modernize-use-using
+    performance-faster-string-find
+    performance-for-range-copy
+    performance-implicit-conversion-in-loop
+    performance-inefficient-algorithm
+    performance-inefficient-vector-operation
+    performance-move-const-arg
+    performance-move-constructor-init
+    performance-no-automatic-move
+    performance-trivially-destructible
+    performance-type-promotion-in-math-fn
+    performance-unnecessary-copy-initialization
+    performance-unnecessary-value-param
+
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/redis_slot.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/cluster.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/cluster.cc:322:25: warning: prefer a lambda to std::bind [modernize-avoid-bind]
+      conn->close_cb_ = std::bind(&SlotImport::StopForLinkError, svr_->slot_import_, conn->GetFD());
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        [ObjectPtr = svr_->slot_import_, capture0 = conn->GetFD()] { ObjectPtr->StopForLinkError(capture0); }
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/replication.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/slot_import.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/cluster/slot_migrate.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/cron.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/encoding.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/rand.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:46:9: warning: function-like macro 'rol' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define rol(value, bits) (((value) << (bits)) | ((value) >> (32 - (bits))))
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:51:9: warning: function-like macro 'blk0' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define blk0(i) (block->l[i] = (rol(block->l[i], 24) & 0xFF00FF00) | (rol(block->l[i], 8) & 0x00FF00FF))
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:57:9: warning: function-like macro 'blk' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define blk(i)        \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:62:9: warning: function-like macro 'R0' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define R0(v, w, x, y, z, i)                                   \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:65:9: warning: function-like macro 'R1' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define R1(v, w, x, y, z, i)                                  \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:68:9: warning: function-like macro 'R2' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define R2(v, w, x, y, z, i)                          \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:71:9: warning: function-like macro 'R3' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define R3(v, w, x, y, z, i)                                            \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:74:9: warning: function-like macro 'R4' used; consider a 'constexpr' template function [cppcoreguidelines-macro-usage]
+#define R4(v, w, x, y, z, i)                          \
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:81:12: warning: variable 'a' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t a, b, c, d, e;
+           ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:81:15: warning: variable 'b' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t a, b, c, d, e;
+              ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:81:18: warning: variable 'c' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t a, b, c, d, e;
+                 ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:81:21: warning: variable 'd' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t a, b, c, d, e;
+                    ^
+                      = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:81:24: warning: variable 'e' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t a, b, c, d, e;
+                       ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:82:3: warning: use 'using' instead of 'typedef' [modernize-use-using]
+  typedef union {
+  ^~~~~~~~~~~~~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:212:12: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t i, j;
+           ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:212:15: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t i, j;
+              ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:233:12: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+  unsigned i;
+           ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/sha1.cc:235:17: warning: variable 'c' is not initialized [cppcoreguidelines-init-variables]
+  unsigned char c;
+                ^
+                  = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/task_runner.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/task_runner.cc:57:3: warning: use range-based for loop instead [modernize-loop-convert]
+  for (size_t i = 0; i < threads_.size(); i++) {
+  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      (auto & thread : threads_)
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:63:9: warning: macro 'AE_READABLE' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define AE_READABLE 1
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:64:9: warning: macro 'AE_WRITABLE' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define AE_WRITABLE 2
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:65:9: warning: macro 'AE_ERROR' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define AE_ERROR 4
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:66:9: warning: macro 'AE_HUP' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define AE_HUP 8
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:70:7: warning: variable 'rv' is not initialized [cppcoreguidelines-init-variables]
+  int rv;
+      ^
+         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:72:20: warning: variable 'servinfo' is not initialized [cppcoreguidelines-init-variables]
+  addrinfo hints, *servinfo, *p;
+                   ^
+                            = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:72:31: warning: variable 'p' is not initialized [cppcoreguidelines-init-variables]
+  addrinfo hints, *servinfo, *p;
+                              ^
+                                = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:192:9: warning: variable 'socket_arg' is not initialized [cppcoreguidelines-init-variables]
+    int socket_arg;
+        ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:207:17: warning: narrowing conversion from 'unsigned long' to signed type '__time_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    tv.tv_sec = timeout / 1000;
+                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:208:18: warning: narrowing conversion from 'unsigned long' to signed type '__suseconds_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    tv.tv_usec = (timeout % 1000) * 1000;
+                 ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:268:7: warning: variable 'flags' is not initialized [cppcoreguidelines-init-variables]
+  int flags;
+      ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:422:42: warning: narrowing conversion from 'std::basic_string<char>::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  return StringMatchLen(pattern.c_str(), pattern.length(), in.c_str(), in.length(), nocase);
+                                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:422:72: warning: narrowing conversion from 'std::basic_string<char>::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  return StringMatchLen(pattern.c_str(), pattern.length(), in.c_str(), in.length(), nocase);
+                                                                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:448:13: warning: variable 'not_symbol' is not initialized [cppcoreguidelines-init-variables]
+        int not_symbol, match;
+            ^
+                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:448:25: warning: variable 'match' is not initialized [cppcoreguidelines-init-variables]
+        int not_symbol, match;
+                        ^
+                              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:458:16: warning: converting integer literal to bool, use bool literal instead [modernize-use-bool-literals]
+        while (1) {
+               ^
+               true
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:544:10: warning: variable 'd' is not initialized [cppcoreguidelines-init-variables]
+  double d;
+         ^
+           = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:578:67: warning: variable 'p' is not initialized [cppcoreguidelines-init-variables]
+  const char *start = value.data(), *end = start + value.size(), *p;
+                                                                  ^
+                                                                    = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:648:20: warning: variable 'retval' is not initialized [cppcoreguidelines-init-variables]
+  int retmask = 0, retval;
+                   ^
+                          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/common/util.cc:655:31: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if ((retval = poll(&pfd, 1, timeout)) == 1) {
+                              ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:263:18: warning: variable 'start' is not initialized [cppcoreguidelines-init-variables]
+         int64_t start, stop;
+                 ^
+                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:263:25: warning: variable 'stop' is not initialized [cppcoreguidelines-init-variables]
+         int64_t start, stop;
+                        ^
+                             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:269:43: warning: narrowing conversion from 'int64_t' (aka 'long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+         compaction_checker_range.Start = start;
+                                          ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:270:42: warning: narrowing conversion from 'int64_t' (aka 'long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+         compaction_checker_range.Stop = stop;
+                                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:518:14: warning: variable 'val' is not initialized [cppcoreguidelines-init-variables]
+         int val;
+             ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:724:30: warning: the parameter 'key' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Config::Get(std::string key, std::vector<std::string> *values) {
+                             ^
+                 const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config.cc:817:50: warning: narrowing conversion from 'std::basic_string<char>::size_type' (aka 'unsigned long') to signed type 'std::streamsize' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output_file.write(string_stream.str().c_str(), string_stream.str().size());
+                                                 ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config_util.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/config/config_util.cc:37:8: warning: variable 'quote' is not initialized [cppcoreguidelines-init-variables]
+  char quote;  // single or double quote
+       ^
+             = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:37:10: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  time_t now;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:137:10: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  time_t now;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:145:10: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  time_t now;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:198:54: warning: the parameter 'reply' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Connection::UnSubscribeAll(unsubscribe_callback reply) {
+                                                     ^
+                                const               &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:200:37: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    if (reply != nullptr) reply("", subcribe_patterns_.size());
+                                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:235:55: warning: the parameter 'reply' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Connection::PUnSubscribeAll(unsubscribe_callback reply) {
+                                                      ^
+                                 const               &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_connection.cc:237:37: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    if (reply != nullptr) reply("", subscribe_channels_.size());
+                                    ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_reply.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_request.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/redis_request.cc:114:70: warning: narrowing conversion from 'unsigned long' to signed type 'ssize_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        char *data = reinterpret_cast<char *>(evbuffer_pullup(input, bulk_len_ + 2));
+                                                                     ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:183:31: warning: narrowing conversion from 'long' to signed type 'int32_t' (aka 'int') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+          last_compact_date = now / 86400;
+                              ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:215:38: warning: the parameter 'host' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+Status Server::AddMaster(std::string host, uint32_t port, bool force_reconnect) {
+                                     ^
+                         const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:233:25: warning: use std::make_unique instead [modernize-make-unique]
+  replication_thread_ = std::unique_ptr<ReplicationThread>(new ReplicationThread(host, master_listen_port, this));
+                        ^~~~~~~~~~~~~~~                    ~~~~~~~~~~~~~~~~~~~~~~                              ~
+                        std::make_unique
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:242:30: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    config_->SetMaster(host, port);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:406:63: warning: the parameter 'channels' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Server::ListChannelSubscribeNum(std::vector<std::string> channels,
+                                                              ^
+                                     const                   &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:702:12: warning: variable 'memtable_sizes' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t memtable_sizes, cur_memtable_sizes, num_snapshots, num_running_flushes;
+           ^
+                          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:702:28: warning: variable 'cur_memtable_sizes' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t memtable_sizes, cur_memtable_sizes, num_snapshots, num_running_flushes;
+                           ^
+                                              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:702:48: warning: variable 'num_snapshots' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t memtable_sizes, cur_memtable_sizes, num_snapshots, num_running_flushes;
+                                               ^
+                                                             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:702:63: warning: variable 'num_running_flushes' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t memtable_sizes, cur_memtable_sizes, num_snapshots, num_running_flushes;
+                                                              ^
+                                                                                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:703:12: warning: variable 'num_immutable_tables' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_immutable_tables, memtable_flush_pending, compaction_pending;
+           ^
+                                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:703:34: warning: variable 'memtable_flush_pending' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_immutable_tables, memtable_flush_pending, compaction_pending;
+                                 ^
+                                                        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:703:58: warning: variable 'compaction_pending' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_immutable_tables, memtable_flush_pending, compaction_pending;
+                                                         ^
+                                                                            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:704:12: warning: variable 'num_running_compaction' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_running_compaction, num_live_versions, num_superversion, num_backgroud_errors;
+           ^
+                                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:704:36: warning: variable 'num_live_versions' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_running_compaction, num_live_versions, num_superversion, num_backgroud_errors;
+                                   ^
+                                                     = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:704:55: warning: variable 'num_superversion' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_running_compaction, num_live_versions, num_superversion, num_backgroud_errors;
+                                                      ^
+                                                                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:704:73: warning: variable 'num_backgroud_errors' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t num_running_compaction, num_live_versions, num_superversion, num_backgroud_errors;
+                                                                        ^
+                                                                                             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:720:14: warning: variable 'estimate_keys' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t estimate_keys, block_cache_usage, block_cache_pinned_usage, index_and_filter_cache_usage;
+             ^
+                           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:720:29: warning: variable 'block_cache_usage' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t estimate_keys, block_cache_usage, block_cache_pinned_usage, index_and_filter_cache_usage;
+                            ^
+                                              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:720:48: warning: variable 'block_cache_pinned_usage' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t estimate_keys, block_cache_usage, block_cache_pinned_usage, index_and_filter_cache_usage;
+                                               ^
+                                                                        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:720:74: warning: variable 'index_and_filter_cache_usage' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t estimate_keys, block_cache_usage, block_cache_pinned_usage, index_and_filter_cache_usage;
+                                                                         ^
+                                                                                                      = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:772:10: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  time_t now;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:826:10: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  time_t now;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:1036:81: warning: narrowing conversion from 'unsigned long' to 'double' [cppcoreguidelines-narrowing-conversions]
+    double used_percent = config_->max_db_size ? storage_->GetTotalSize() * 100 / (config_->max_db_size * GiB) : 0;
+                                                                                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:1044:34: warning: narrowing conversion from 'unsigned long' to 'double' [cppcoreguidelines-narrowing-conversions]
+      double used_disk_percent = used_disk_size * 100 / disk_capacity;
+                                 ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:1324:54: warning: the parameter 'addr' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Server::KillClient(int64_t *killed, std::string addr, uint64_t id, uint64_t type, bool skipme,
+                                                     ^
+                                         const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/server.cc:1413:39: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  std::string value = Redis::MultiLen(tokens.size());
+                                      ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/tls_util.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:121:16: warning: variable 'bev' is not initialized [cppcoreguidelines-init-variables]
+  bufferevent *bev;
+               ^
+                   = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:165:12: warning: variable 'port' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t port;
+           ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:167:23: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    conn->SetAddr(ip, port);
+                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:200:7: warning: variable 'af' is not initialized [cppcoreguidelines-init-variables]
+  int af, rv, fd, sock_opt = 1;
+      ^
+         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:200:11: warning: variable 'rv' is not initialized [cppcoreguidelines-init-variables]
+  int af, rv, fd, sock_opt = 1;
+          ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:200:15: warning: variable 'fd' is not initialized [cppcoreguidelines-init-variables]
+  int af, rv, fd, sock_opt = 1;
+              ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:208:27: warning: variable 'srv_info' is not initialized [cppcoreguidelines-init-variables]
+  struct addrinfo hints, *srv_info, *p;
+                          ^
+                                   = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:208:38: warning: variable 'p' is not initialized [cppcoreguidelines-init-variables]
+  struct addrinfo hints, *srv_info, *p;
+                                     ^
+                                       = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/server/worker.cc:426:75: warning: the parameter 'addr' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Worker::KillClient(Redis::Connection *self, uint64_t id, std::string addr, uint64_t type, bool skipme,
+                                                                          ^
+                                                              const      &
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/disk_stats.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:30:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output.append(Redis::Integer(id));
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:32:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output.append(Redis::Integer(duration));
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:40:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output.append(Redis::Integer(id));
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:43:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output.append(Redis::Integer(duration));
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:56:10: warning: variable 'n' is not initialized [cppcoreguidelines-init-variables]
+  size_t n;
+         ^
+           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:59:10: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'ssize_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  return n;
+         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:95:10: warning: variable 'n' is not initialized [cppcoreguidelines-init-variables]
+  size_t n;
+         ^
+           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:104:33: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  output.append(Redis::MultiLen(n));
+                                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:112:16: warning: class 'LogCollector' defines a non-default destructor but does not define a copy constructor, a copy assignment operator, a move constructor or a move assignment operator [cppcoreguidelines-special-member-functions]
+template class LogCollector<SlowEntry>;
+               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/log_collector.cc:113:16: warning: class 'LogCollector' defines a non-default destructor but does not define a copy constructor, a copy assignment operator, a move constructor or a move assignment operator [cppcoreguidelines-special-member-functions]
+template class LogCollector<PerfEntry>;
+               ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/stats.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/stats.cc:33:5: warning: use range-based for loop instead [modernize-loop-convert]
+    for (int j = 0; j < STATS_METRIC_SAMPLES; j++) {
+    ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        (unsigned long & sample : im.samples)
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/stats/stats.cc:108:3: warning: use range-based for loop instead [modernize-loop-convert]
+  for (int j = 0; j < STATS_METRIC_SAMPLES; j++) sum += inst_metrics[metric].samples[j];
+  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      (unsigned long sample : inst_metrics[metric].samples) sample
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/batch_extractor.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/batch_extractor.cc:73:9: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+        RedisCommand cmd = static_cast<RedisCommand>(*parse_result);
+        ^~~~~~~~~~~~
+        auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/batch_extractor.cc:106:9: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+        RedisCommand cmd = static_cast<RedisCommand>(*parse_result);
+        ^~~~~~~~~~~~
+        auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/batch_extractor.cc:152:9: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+        RedisCommand cmd = static_cast<RedisCommand>(*parse_result);
+        ^~~~~~~~~~~~
+        auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/batch_extractor.cc:243:9: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+        RedisCommand cmd = static_cast<RedisCommand>(*parse_result);
+        ^~~~~~~~~~~~
+        auto
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/compact_filter.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/compaction_checker.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/event_listener.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/lock_manager.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/lock_manager.cc:28:16: warning: narrowing conversion from 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  hash_mask_ = (1U << hash_power) - 1;
+               ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_db.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_db.cc:166:33: warning: the parameter 'prefix' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void Database::Keys(std::string prefix, std::vector<std::string> *keys, KeyNumStats *stats) {
+                                ^
+                    const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_db.cc:338:30: warning: use nullptr [modernize-use-nullptr]
+    unsigned int seed = time(NULL);
+                             ^~~~
+                             nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_db.cc:520:28: warning: variable 'snapshot' is not initialized [cppcoreguidelines-init-variables]
+  const rocksdb::Snapshot *snapshot;
+                           ^
+                                    = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_db.cc:614:3: warning: use range-based for loop instead [modernize-loop-convert]
+  for (size_t i = 0; i < args_.size(); i++) {
+  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      (auto & arg : args_)
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc:45:12: warning: variable 'key_size' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t key_size;
+           ^
+                    = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc:46:11: warning: variable 'namespace_size' is not initialized [cppcoreguidelines-init-variables]
+  uint8_t namespace_size;
+          ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc:64:11: warning: variable 'namespace_size' is not initialized [cppcoreguidelines-init-variables]
+  uint8_t namespace_size;
+          ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc:128:11: warning: variable 'namespace_size' is not initialized [cppcoreguidelines-init-variables]
+  uint8_t namespace_size;
+          ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_metadata.cc:134:14: warning: variable 'slot_id' is not initialized [cppcoreguidelines-init-variables]
+    uint16_t slot_id;
+             ^
+                     = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/redis_pubsub.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:69:9: warning: macro 'MAX_LONG_DOUBLE_CHARS' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define MAX_LONG_DOUBLE_CHARS 5 * 1024
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:196:7: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+  int j, level, argc = lua_gettop(lua);
+      ^
+        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:196:10: warning: variable 'level' is not initialized [cppcoreguidelines-init-variables]
+  int j, level, argc = lua_gettop(lua);
+         ^
+               = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:206:11: warning: narrowing conversion from 'lua_Number' (aka 'double') to 'int' [cppcoreguidelines-narrowing-conversions]
+  level = lua_tonumber(lua, -argc);
+          ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:217:12: warning: variable 'len' is not initialized [cppcoreguidelines-init-variables]
+    size_t len;
+           ^
+               = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:218:17: warning: variable 's' is not initialized [cppcoreguidelines-init-variables]
+    const char *s;
+                ^
+                  = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:272:67: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      funcname[j + 2] = (sha[j] >= 'A' && sha[j] <= 'Z') ? sha[j] + ('a' - 'A') : sha[j];
+                                                                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:272:83: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      funcname[j + 2] = (sha[j] >= 'A' && sha[j] <= 'Z') ? sha[j] + ('a' - 'A') : sha[j];
+                                                                                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:324:9: warning: macro 'LUA_GC_CYCLE_PERIOD' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define LUA_GC_CYCLE_PERIOD 50
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:341:7: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+  int j, argc = lua_gettop(lua);
+      ^
+        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:359:19: warning: variable 'obj_s' is not initialized [cppcoreguidelines-init-variables]
+      const char *obj_s;
+                  ^
+                        = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:360:14: warning: variable 'obj_len' is not initialized [cppcoreguidelines-init-variables]
+      size_t obj_len;
+             ^
+                     = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:522:10: warning: variable 'len' is not initialized [cppcoreguidelines-init-variables]
+  size_t len;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:523:15: warning: variable 's' is not initialized [cppcoreguidelines-init-variables]
+  const char *s;
+              ^
+                = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:550:7: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+  int j;
+      ^
+        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:625:11: warning: variable 'value' is not initialized [cppcoreguidelines-init-variables]
+  int64_t value;
+          ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:634:11: warning: variable 'bulklen' is not initialized [cppcoreguidelines-init-variables]
+  int64_t bulklen;
+          ^
+                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:668:11: warning: variable 'mbulklen' is not initialized [cppcoreguidelines-init-variables]
+  int64_t mbulklen;
+          ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:702:10: warning: variable 'd' is not initialized [cppcoreguidelines-init-variables]
+  double d;
+         ^
+           = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:734:10: warning: variable 'obj_len' is not initialized [cppcoreguidelines-init-variables]
+  size_t obj_len;
+         ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/scripting.cc:843:26: warning: narrowing conversion from 'unsigned long' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    lua_rawseti(lua, -2, i + 1);
+                         ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:173:88: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  rate_limiter_ = std::shared_ptr<rocksdb::RateLimiter>(rocksdb::NewGenericRateLimiter(max_io_mb * MiB));
+                                                                                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:208:16: warning: variable 'tmp_db' is not initialized [cppcoreguidelines-init-variables]
+  rocksdb::DB *tmp_db;
+               ^
+                      = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:340:37: warning: use nullptr [modernize-use-nullptr]
+  rocksdb::Checkpoint *checkpoint = NULL;
+                                    ^~~~
+                                    nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:588:12: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t size, total_size = 0;
+           ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:606:8: warning: variable 'reach_db_size_limit' is not initialized [cppcoreguidelines-init-variables]
+  bool reach_db_size_limit;
+       ^
+                           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:629:36: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  rate_limiter_->SetBytesPerSecond(max_io_mb * MiB);
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:646:27: warning: redundant void argument list in function definition [modernize-redundant-void-arg]
+bool Storage::ShiftReplId(void) {
+                          ^~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:648:27: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  const int charset_len = strlen(charset);
+                          ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:698:27: warning: redundant void argument list in function definition [modernize-redundant-void-arg]
+    std::string GetReplId(void) { return replid_in_wal_; }
+                          ^~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:711:44: warning: redundant void argument list in function definition [modernize-redundant-void-arg]
+std::string Storage::GetReplIdFromDbEngine(void) {
+                                           ^~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:733:39: warning: use nullptr [modernize-use-nullptr]
+    rocksdb::Checkpoint *checkpoint = NULL;
+                                      ^~~~
+                                      nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:769:13: warning: loop variable is copied but only used as const reference; consider making it a const reference [performance-for-range-copy]
+  for (auto f : result) {
+            ^
+       const  &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:778:31: warning: redundant void argument list in function definition [modernize-redundant-void-arg]
+bool Storage::ExistCheckpoint(void) {
+                              ^~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:783:35: warning: redundant void argument list in function definition [modernize-redundant-void-arg]
+bool Storage::ExistSyncCheckpoint(void) { return env_->FileExists(config_->sync_checkpoint_dir).ok(); }
+                                  ^~~~
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:793:13: warning: loop variable is copied but only used as const reference; consider making it a const reference [performance-for-range-copy]
+  for (auto file : tmp_files) {
+            ^
+       const  &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:946:12: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t size;
+           ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/storage.cc:950:14: warning: use std::make_unique instead [modernize-make-unique]
+  src_reader.reset(new rocksdb::SequentialFileWrapper(src_file.get()));
+            ~^~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~              ~
+             = std::make_unique<rocksdb::SequentialFileWrapper>
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/table_properties_collector.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/table_properties_collector.cc:33:7: warning: variable 'now' is not initialized [cppcoreguidelines-init-variables]
+  int now;
+      ^
+          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/table_properties_collector.cc:34:11: warning: variable 'type' is not initialized [cppcoreguidelines-init-variables]
+  uint8_t type;
+          ^
+               = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/table_properties_collector.cc:35:12: warning: variable 'expired' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t expired, subkeys = 0;
+           ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/storage/table_properties_collector.cc:36:12: warning: variable 'version' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t version;
+           ^
+                   = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:62:9: warning: macro 'D_R' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define D_R (M_PI / 180.0)
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:63:9: warning: macro 'R_MAJOR' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define R_MAJOR 6378137.0
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:64:9: warning: macro 'R_MINOR' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define R_MINOR 6356752.3142
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:65:9: warning: macro 'RATIO' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define RATIO (R_MINOR / R_MAJOR)
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:66:9: warning: macro 'ECCENT' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define ECCENT (sqrt(1.0 - (RATIO * RATIO)))
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:67:9: warning: macro 'COM' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define COM (0.5 * ECCENT)
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:169:15: warning: use nullptr [modernize-use-nullptr]
+  if (hash == NULL || step > 32 || step == 0 || RANGEPISZERO(lat_range) || RANGEPISZERO(long_range)) return 0;
+              ^~~~
+              nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:188:17: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  lat_offset *= (1ULL << step);
+                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:189:18: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  long_offset *= (1ULL << step);
+                 ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:190:29: warning: narrowing conversion from 'double' to 'uint32_t' (aka 'unsigned int') [cppcoreguidelines-narrowing-conversions]
+  hash->bits = interleave64(lat_offset, long_offset);
+                            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:190:41: warning: narrowing conversion from 'double' to 'uint32_t' (aka 'unsigned int') [cppcoreguidelines-narrowing-conversions]
+  hash->bits = interleave64(lat_offset, long_offset);
+                                        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:206:27: warning: use nullptr [modernize-use-nullptr]
+  if (HASHISZERO(hash) || NULL == area || RANGEISZERO(lat_range) || RANGEISZERO(long_range)) {
+                          ^~~~
+                          nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:223:55: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  area->latitude.min = lat_range.min + (ilato * 1.0 / (1ull << step)) * lat_scale;
+                                                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:224:61: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  area->latitude.max = lat_range.min + ((ilato + 1) * 1.0 / (1ull << step)) * lat_scale;
+                                                            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:225:57: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  area->longitude.min = long_range.min + (ilono * 1.0 / (1ull << step)) * long_scale;
+                                                        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:226:63: warning: narrowing conversion from 'unsigned long long' to 'double' [cppcoreguidelines-narrowing-conversions]
+  area->longitude.max = long_range.min + ((ilono + 1) * 1.0 / (1ull << step)) * long_scale;
+                                                              ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:390:10: warning: variable 'min_lon' is not initialized [cppcoreguidelines-init-variables]
+  double min_lon, max_lon, min_lat, max_lat;
+         ^
+                 = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:390:19: warning: variable 'max_lon' is not initialized [cppcoreguidelines-init-variables]
+  double min_lon, max_lon, min_lat, max_lat;
+                  ^
+                          = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:390:28: warning: variable 'min_lat' is not initialized [cppcoreguidelines-init-variables]
+  double min_lon, max_lon, min_lat, max_lat;
+                           ^
+                                   = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:390:37: warning: variable 'max_lat' is not initialized [cppcoreguidelines-init-variables]
+  double min_lon, max_lon, min_lat, max_lat;
+                                    ^
+                                            = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:392:7: warning: variable 'steps' is not initialized [cppcoreguidelines-init-variables]
+  int steps;
+      ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:10: warning: variable 'lat1r' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+         ^
+               = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:17: warning: variable 'lon1r' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+                ^
+                      = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:24: warning: variable 'lat2r' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+                       ^
+                             = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:31: warning: variable 'lon2r' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+                              ^
+                                    = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:38: warning: variable 'u' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+                                     ^
+                                       = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/geohash.cc:475:41: warning: variable 'v' is not initialized [cppcoreguidelines-init-variables]
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+                                        ^
+                                          = NAN
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:125:12: warning: variable 'frag_index' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t frag_index, valid_size;
+           ^
+                      = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:125:24: warning: variable 'valid_size' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t frag_index, valid_size;
+                       ^
+                                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:168:21: warning: narrowing conversion from 'uint8_t' (aka 'unsigned char') to signed type '__gnu_cxx::__alloc_traits<std::allocator<char>, char>::value_type' (aka 'char') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      fragment[i] = swap_table[static_cast<uint8_t>(fragment[i])];
+                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:201:12: warning: variable 'expand_size' is not initialized [cppcoreguidelines-init-variables]
+    size_t expand_size;
+           ^
+                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:214:26: warning: narrowing conversion from 'int' to signed type '__gnu_cxx::__alloc_traits<std::allocator<char>, char>::value_type' (aka 'char') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    value[byte_index] |= 1 << bit_offset;
+                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:216:26: warning: narrowing conversion from 'int' to signed type '__gnu_cxx::__alloc_traits<std::allocator<char>, char>::value_type' (aka 'char') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    value[byte_index] &= ~(1 << bit_offset);
+                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:250:3: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+  uint32_t u_start = static_cast<uint32_t>(start);
+  ^~~~~~~~
+  auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:251:3: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+  uint32_t u_stop = static_cast<uint32_t>(stop);
+  ^~~~~~~~
+  auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:300:3: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+  uint32_t u_start = static_cast<uint32_t>(start);
+  ^~~~~~~~
+  auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:301:3: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+  uint32_t u_stop = static_cast<uint32_t>(stop);
+  ^~~~~~~~
+  auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:391:14: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t i, frag_numkeys = num_keys, stop_index = (max_size - 1) / kBitmapSegmentBytes;
+             ^
+               = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:395:19: warning: variable 'output' is not initialized [cppcoreguidelines-init-variables]
+    unsigned char output, byte;
+                  ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:395:27: warning: variable 'byte' is not initialized [cppcoreguidelines-init-variables]
+    unsigned char output, byte;
+                          ^
+                               = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:433:11: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+          uint64_t *lres = reinterpret_cast<uint64_t *>(frag_res.get());
+          ^~~~~~~~
+          auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap.cc:539:10: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  *len = max_size;
+         ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:54:14: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  byteval &= ~(1 << bit_offset);
+             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:55:14: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  byteval |= ((new_bit & 0x1) << bit_offset);
+             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:75:26: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (start < 0) start = strlen + start;
+                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:76:24: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (stop < 0) stop = strlen + stop;
+                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:79:52: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (stop >= static_cast<int64_t>(strlen)) stop = strlen - 1;
+                                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:95:26: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (start < 0) start = strlen + start;
+                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:96:24: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (stop < 0) stop = strlen + stop;
+                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:99:52: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (stop >= static_cast<int64_t>(strlen)) stop = strlen - 1;
+                                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:133:13: warning: variable 'p4' is not initialized [cppcoreguidelines-init-variables]
+  uint32_t *p4;
+            ^
+               = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:14: warning: variable 'aux1' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+             ^
+                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:20: warning: variable 'aux2' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                   ^
+                        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:26: warning: variable 'aux3' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                         ^
+                              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:32: warning: variable 'aux4' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                               ^
+                                    = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:38: warning: variable 'aux5' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                                     ^
+                                          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:44: warning: variable 'aux6' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                                           ^
+                                                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:144:50: warning: variable 'aux7' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t aux1, aux2, aux3, aux4, aux5, aux6, aux7;
+                                                 ^
+                                                      = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:195:13: warning: variable 'l' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t *l;
+            ^
+              = nullptr
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:196:12: warning: variable 'skipval' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t skipval, word = 0, one;
+           ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:196:31: warning: variable 'one' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t skipval, word = 0, one;
+                              ^
+                                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:198:12: warning: variable 'j' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t j;
+           ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_bitmap_string.cc:199:7: warning: variable 'found' is not initialized [cppcoreguidelines-init-variables]
+  int found;
+      ^
+            = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:109:29: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    int64_t result_length = geo_points->size();
+                            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:122:11: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+      int ret;
+          ^
+              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:193:9: warning: variable 'idx' is not initialized [cppcoreguidelines-init-variables]
+    int idx;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:200:13: warning: narrowing conversion from 'unsigned long' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      idx = (hash.bits >> (52 - ((i + 1) * 5))) & 0x1f;
+            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:216:16: warning: variable 'i' is not initialized [cppcoreguidelines-init-variables]
+  unsigned int i, count = 0, last_processed = 0;
+               ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:246:10: warning: narrowing conversion from 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  return count;
+         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:254:20: warning: variable 'min' is not initialized [cppcoreguidelines-init-variables]
+  GeoHashFix52Bits min, max;
+                   ^
+                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:254:25: warning: variable 'max' is not initialized [cppcoreguidelines-init-variables]
+  GeoHashFix52Bits min, max;
+                        ^
+                            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:257:37: warning: narrowing conversion from 'GeoHashFix52Bits' (aka 'unsigned long') to 'double' [cppcoreguidelines-narrowing-conversions]
+  return getPointsInRange(user_key, min, max, lon, lat, radius, geo_points);
+                                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:257:42: warning: narrowing conversion from 'GeoHashFix52Bits' (aka 'unsigned long') to 'double' [cppcoreguidelines-narrowing-conversions]
+  return getPointsInRange(user_key, min, max, lon, lat, radius, geo_points);
+                                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:309:7: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+  int size;
+      ^
+           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_geo.cc:328:10: warning: variable 'distance' is not initialized [cppcoreguidelines-init-variables]
+  double distance, xy[2];
+         ^
+                  = NAN
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_hash.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_hash.cc:135:21: warning: narrowing conversion from 'double' to 'float' [cppcoreguidelines-narrowing-conversions]
+        old_value = std::stod(value_bytes, &idx);
+                    ^
+4668 warnings generated.
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc
+Suppressed 4671 warnings (4668 in non-user code, 3 NOLINT).
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:54:70: warning: the parameter 'elems' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+rocksdb::Status List::push(const Slice &user_key, std::vector<Slice> elems, bool create_if_missing, bool left,
+6420 warnings generated.
+                                                                     ^
+Suppressed 6422 warnings (6419 in non-user code, 3 NOLINT).
+                                                  const             &
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:87:10: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+6728 warnings generated.
+  *ret = metadata.size;
+Suppressed 6733 warnings (6728 in non-user code, 5 NOLINT).
+         ^
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:274:45: warning: variable 'new_elem_index' is not initialized [cppcoreguidelines-init-variables]
+6346 warnings generated.
+  uint64_t pivot_index = metadata.head - 1, new_elem_index;
+Suppressed 6349 warnings (6346 in non-user code, 3 NOLINT).
+                                            ^
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                                                           = 0
+6386 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:337:10: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 6391 warnings (6386 in non-user code, 5 NOLINT).
+  *ret = metadata.size;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+         ^
+4135 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:350:27: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 4138 warnings (4135 in non-user code, 3 NOLINT).
+  if (index < 0) index += metadata.size;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                          ^
+2699 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:400:14: warning: variable 'index' is not initialized [cppcoreguidelines-init-variables]
+Suppressed 2699 warnings (2699 in non-user code).
+    uint64_t index;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+             ^
+345 warnings generated.
+                   = 0
+Suppressed 345 warnings (345 in non-user code).
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:417:26: warning: narrowing conversion from 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+  if (index < 0) index = metadata.size + index;
+767 warnings generated.
+Suppressed 754 warnings (749 in non-user code, 5 NOLINT).
+                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:439:13: warning: variable 'type' is not initialized [cppcoreguidelines-init-variables]
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+  RedisType type;
+4811 warnings generated.
+Suppressed 4813 warnings (4810 in non-user code, 3 NOLINT).
+            ^
+                 = 0
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:449:7: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+5701 warnings generated.
+  int ret;
+Suppressed 5686 warnings (5681 in non-user code, 5 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+      ^
+          = 0
+6848 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:600:26: warning: narrowing conversion from 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 6839 warnings (6836 in non-user code, 3 NOLINT).
+  if (start < 0) start = metadata.size + start;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                         ^
+4672 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:601:85: warning: narrowing conversion from 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 4674 warnings (4671 in non-user code, 3 NOLINT).
+  if (stop < 0) stop = static_cast<int>(metadata.size) >= -1 * stop ? metadata.size + stop : -1;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                                                                                    ^
+6367 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_list.cc:601:94: warning: narrowing conversion from constant value 4294967295 (0xFFFFFFFF) of type 'unsigned int' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 6363 warnings (6360 in non-user code, 3 NOLINT).
+  if (stop < 0) stop = static_cast<int>(metadata.size) >= -1 * stop ? metadata.size + stop : -1;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                                                                                             ^
+3314 warnings generated.
+Suppressed 3314 warnings (3314 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6363 warnings generated.
+Suppressed 6367 warnings (6362 in non-user code, 5 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6748 warnings generated.
+Suppressed 6725 warnings (6722 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6504 warnings generated.
+Suppressed 6499 warnings (6495 in non-user code, 4 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5847 warnings generated.
+Suppressed 5850 warnings (5847 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+3867 warnings generated.
+Suppressed 3857 warnings (3857 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5013 warnings generated.
+Suppressed 5014 warnings (5011 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6366 warnings generated.
+Suppressed 6365 warnings (6362 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5853 warnings generated.
+Suppressed 5856 warnings (5853 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5835 warnings generated.
+Suppressed 5838 warnings (5835 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5842 warnings generated.
+Suppressed 5845 warnings (5842 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+3773 warnings generated.
+Suppressed 3772 warnings (3772 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6370 warnings generated.
+Suppressed 6369 warnings (6366 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+4914 warnings generated.
+Suppressed 4912 warnings (4909 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5838 warnings generated.
+Suppressed 5841 warnings (5838 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6685 warnings generated.
+Suppressed 6667 warnings (6664 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+7315 warnings generated.
+Suppressed 7304 warnings (7298 in non-user code, 6 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6369 warnings generated.
+Suppressed 6368 warnings (6365 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+1582 warnings generated.
+Suppressed 1556 warnings (1555 in non-user code, 1 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5868 warnings generated.
+Suppressed 5856 warnings (5853 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5859 warnings generated.
+Suppressed 5841 warnings (5838 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+5894 warnings generated.
+Suppressed 5885 warnings (5882 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+6161 warnings generated.
+Suppressed 6163 warnings (6160 in non-user code, 3 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_set.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_set.cc:132:10: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  *ret = metadata.size;
+         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_set.cc:247:13: warning: variable 'type' is not initialized [cppcoreguidelines-init-variables]
+  RedisType type;
+            ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_set.cc:311:3: warning: use range-based for loop instead [modernize-loop-convert]
+  for (size_t i = 0; i < keys.size(); i++) {
+  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      (auto key : keys)
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:36:77: warning: the parameter 'ids' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+rocksdb::Status Sortedint::Add(const Slice &user_key, std::vector<uint64_t> ids, int *ret) {
+                                                                            ^
+                                                      const                &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:70:80: warning: the parameter 'ids' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+rocksdb::Status Sortedint::Remove(const Slice &user_key, std::vector<uint64_t> ids, int *ret) {
+                                                                               ^
+                                                         const                &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:110:10: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  *ret = metadata.size;
+         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:144:12: warning: variable 'id' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t id, pos = 0;
+           ^
+              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:193:12: warning: variable 'id' is not initialized [cppcoreguidelines-init-variables]
+  uint64_t id;
+           ^
+              = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_sortedint.cc:213:80: warning: the parameter 'ids' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+rocksdb::Status Sortedint::MExist(const Slice &user_key, std::vector<uint64_t> ids, std::vector<int> *exists) {
+                                                                               ^
+                                                         const                &
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream.cc
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream_base.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream_base.cc:64:25: warning: 'find' called with a string literal consisting of a single character; consider using the more effective overload accepting a character [performance-faster-string-find]
+  auto pos = input.find("-");
+                        ^~~
+                        '-'
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream_base.cc:87:25: warning: 'find' called with a string literal consisting of a single character; consider using the more effective overload accepting a character [performance-faster-string-find]
+  auto pos = input.find("-");
+                        ^~~
+                        '-'
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream_base.cc:121:25: warning: 'find' called with a string literal consisting of a single character; consider using the more effective overload accepting a character [performance-faster-string-find]
+  auto pos = input.find("-");
+                        ^~~
+                        '-'
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_stream_base.cc:158:14: warning: variable 'len' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t len;
+             ^
+                 = 0
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:140:3: warning: use range-based for loop instead [modernize-loop-convert]
+  for (size_t i = 0; i < ns_keys.size(); i++) {
+  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      (auto & ns_key : ns_keys)
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:167:21: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  metadata.expire = expire;
+                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:243:21: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  metadata.expire = expire;
+                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:250:7: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+  int size;
+      ^
+           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:339:15: warning: variable 'idx' is not initialized [cppcoreguidelines-init-variables]
+  std::size_t idx;
+              ^
+                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:375:23: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    metadata.expire = expire;
+                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:399:7: warning: variable 'exists' is not initialized [cppcoreguidelines-init-variables]
+  int exists;
+      ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:402:5: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+    keys.emplace_back(pair.key);
+    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:417:23: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    metadata.expire = expire;
+                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_string.cc:463:23: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    metadata.expire = expire;
+                      ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:146:10: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  *ret = metadata.size;
+         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:156:7: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+  int ret;
+      ^
+          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:176:56: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (count > static_cast<int>(metadata.size)) count = metadata.size;
+                                                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:241:27: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (start < 0) start += metadata.size;
+                          ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:242:25: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  if (stop < 0) stop += metadata.size;
+                        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:386:12: warning: variable 'score' is not initialized [cppcoreguidelines-init-variables]
+    double score;
+           ^
+                 = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:418:71: warning: the parameter 'spec' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+rocksdb::Status ZSet::RangeByLex(const Slice &user_key, ZRangeLexSpec spec, std::vector<std::string> *members,
+                                                                      ^
+                                                        const        &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:622:12: warning: variable 'score' is not initialized [cppcoreguidelines-init-variables]
+    double score;
+           ^
+                 = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:664:7: warning: variable 'target_size' is not initialized [cppcoreguidelines-init-variables]
+  int target_size;
+      ^
+                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:708:23: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    if (size) *size = mscores.size();
+                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:721:7: warning: variable 'target_size' is not initialized [cppcoreguidelines-init-variables]
+  int target_size;
+      ^
+                  = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:755:7: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+      mscores.emplace_back(MemberScore{iter.first, iter.second});
+      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/types/redis_zset.cc:757:23: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    if (size) *size = mscores.size();
+                      ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/main.cc
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/main.cc:30:9: warning: macro '_XOPEN_SOURCE' used to declare a constant; consider using a 'constexpr' constant [cppcoreguidelines-macro-usage]
+#define _XOPEN_SOURCE 700
+        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/main.cc:83:44: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      LOG(ERROR) << std::left << std::setw(max_msg_len) << messages[i] << "  " << func_info;
+                                           ^
+/usr/bin/clang-tidy-12 --use-color -p=build /home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc
+5857 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:414:32: warning: narrowing conversion from 'std::basic_string<char>::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+Suppressed 5848 warnings (5845 in non-user code, 3 NOLINT).
+      *output = Redis::Integer(value.size());
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+                               ^
+5876 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:508:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+Suppressed 5876 warnings (5873 in non-user code, 3 NOLINT).
+    int ret;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+        ^
+5855 warnings generated.
+            = 0
+Suppressed 5852 warnings (5849 in non-user code, 3 NOLINT).
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:541:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+    int ret;
+5846 warnings generated.
+        ^
+Suppressed 5849 warnings (5846 in non-user code, 3 NOLINT).
+            = 0
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:641:14: warning: narrowing conversion from 'long' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+4696 warnings generated.
+      ttl_ = *ttl_ms / 1000;
+Suppressed 4695 warnings (4692 in non-user code, 3 NOLINT).
+             ^
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:683:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+6169 warnings generated.
+    int ret;
+Suppressed 6162 warnings (6159 in non-user code, 3 NOLINT).
+        ^
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+            = 0
+6219 warnings generated.
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:704:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+Suppressed 6209 warnings (6206 in non-user code, 3 NOLINT).
+    int ret;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+        ^
+7195 warnings generated.
+            = 0
+Suppressed 7196 warnings (7193 in non-user code, 3 NOLINT).
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:722:13: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+    int64_t ret;
+7293 warnings generated.
+            ^
+                = 0
+Suppressed 7178 warnings (7175 in non-user code, 3 NOLINT).
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:734:13: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int64_t ret;
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+            ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:755:13: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int64_t ret;
+            ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:779:12: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    double ret;
+           ^
+               = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:803:13: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int64_t ret;
+            ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:877:45: warning: the parameter 'arg' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+Status getBitOffsetFromArgument(std::string arg, uint32_t *offset) {
+                                            ^
+                                const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:896:10: warning: variable 'bit' is not initialized [cppcoreguidelines-init-variables]
+    bool bit;
+         ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:925:10: warning: variable 'old_bit' is not initialized [cppcoreguidelines-init-variables]
+    bool old_bit;
+         ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:960:14: warning: variable 'cnt' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t cnt;
+             ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1001:13: warning: variable 'pos' is not initialized [cppcoreguidelines-init-variables]
+    int64_t pos;
+            ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1055:15: warning: variable 'type' is not initialized [cppcoreguidelines-init-variables]
+    RedisType type;
+              ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1075:38: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(infos.size()));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1090:9: warning: variable 'ttl' is not initialized [cppcoreguidelines-init-variables]
+    int ttl;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1105:9: warning: variable 'ttl' is not initialized [cppcoreguidelines-init-variables]
+    int ttl;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1195:18: warning: narrowing conversion from 'StatusOr<long>::value_type' (aka 'long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    timestamp_ = *parse_result;
+                 ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1245:9: warning: variable 'ttl' is not initialized [cppcoreguidelines-init-variables]
+    int ttl;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1277:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1305:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1337:14: warning: variable 'count' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t count;
+             ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1359:13: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int64_t ret;
+            ^
+                = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1384:12: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    double ret;
+           ^
+               = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1432:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1462:7: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+      keys.emplace_back(fv.field);
+      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1480:7: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+      values.emplace_back(p.value);
+      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1552:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1661:7: warning: class 'CommandBPop' defines a non-default destructor but does not define a copy constructor, a copy assignment operator, a move constructor or a move assignment operator [cppcoreguidelines-special-member-functions]
+class CommandBPop : public Commander {
+      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1823:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1851:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:1897:14: warning: variable 'count' is not initialized [cppcoreguidelines-init-variables]
+    uint32_t count;
+             ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2044:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2062:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2076:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2104:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2131:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(exists.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2209:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2357:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2425:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2443:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2467:12: warning: variable 'score' is not initialized [cppcoreguidelines-init-variables]
+    double score;
+           ^
+                 = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2493:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2529:36: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(memeber_scores.size() * 2));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2579:38: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(member_scores.size()));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2581:38: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(member_scores.size() * 2));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2629:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2679:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2687:38: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(member_scores.size()));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2689:38: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(member_scores.size() * 2));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2707:9: warning: variable 'rank' is not initialized [cppcoreguidelines-init-variables]
+    int rank;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2743:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2772:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2799:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2824:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2841:12: warning: variable 'score' is not initialized [cppcoreguidelines-init-variables]
+    double score;
+           ^
+                 = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2938:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:2959:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3045:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3071:12: warning: variable 'distance' is not initialized [cppcoreguidelines-init-variables]
+    double distance;
+           ^
+                    = NAN
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3222:32: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      *output = Redis::Integer(geo_points.size());
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3230:25: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    int result_length = geo_points.size();
+                        ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3326:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3354:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3371:9: warning: variable 'ret' is not initialized [cppcoreguidelines-init-variables]
+    int ret;
+        ^
+            = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3402:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(exists.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3442:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(ids.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3493:9: warning: variable 'size' is not initialized [cppcoreguidelines-init-variables]
+    int size;
+        ^
+             = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3498:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(ids.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3537:15: warning: variable 'type' is not initialized [cppcoreguidelines-init-variables]
+    RedisType type;
+              ^
+                   = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3546:30: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    *output = Redis::Integer(result);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3603:33: warning: narrowing conversion from 'std::deque::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    conn->Reply(Redis::MultiLen(conn->GetMultiExecCommands()->size()));
+                                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3675:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      *output = Redis::Integer(stats.n_key);
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3710:61: warning: the parameter 'name' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void SubscribeCommandReply(std::string *output, std::string name, std::string sub_name, int num) {
+                                                            ^
+                                                const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3710:79: warning: the parameter 'sub_name' is copied for each invocation but only used as a const reference; consider making it a const reference [performance-unnecessary-value-param]
+void SubscribeCommandReply(std::string *output, std::string name, std::string sub_name, int num) {
+                                                                              ^
+                                                                  const      &
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3733:11: warning: prefer a lambda to std::bind [modernize-avoid-bind]
+          std::bind(SubscribeCommandReply, output, "unsubscribe", std::placeholders::_1, std::placeholders::_2));
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          [output](auto && PH1, auto && PH2) { return SubscribeCommandReply(output, "unsubscribe", std::forward<decltype(PH1)>(PH1), std::forward<decltype(PH2)>(PH2)); }
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3761:11: warning: prefer a lambda to std::bind [modernize-avoid-bind]
+          std::bind(SubscribeCommandReply, output, "punsubscribe", std::placeholders::_1, std::placeholders::_2));
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          [output](auto && PH1, auto && PH2) { return SubscribeCommandReply(output, "punsubscribe", std::forward<decltype(PH1)>(PH1), std::forward<decltype(PH2)>(PH2)); }
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3802:38: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(channel_subscribe_nums.size() * 2));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:3805:39: warning: narrowing conversion from 'size_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        output->append(Redis::Integer(chan_subscribe_num.subscribe_num));
+                                      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4161:32: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      *output = Redis::Integer(conn->GetID());
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4271:47: warning: narrowing conversion from 'unsigned long' to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        auto s = GetKeysFromCommand(args_[2], args_.size() - 2, &keys_indexes);
+                                              ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4279:11: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+          keys.emplace_back(args_[key_index + 2]);
+          ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4304:15: warning: variable 'protocol' is not initialized [cppcoreguidelines-init-variables]
+      int64_t protocol;
+              ^
+                       = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4562:7: warning: 'emplace_back' is called inside a loop; consider pre-allocating the container capacity before the loop [performance-inefficient-vector-operation]
+      score_strings.emplace_back(Util::Float2String(score));
+      ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4618:30: warning: narrowing conversion from 'uint32_t' (aka 'unsigned int') to signed type 'int' is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      conn->SetListeningPort(port_);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4714:9: warning: use auto when initializing with a cast to avoid duplicating the type name [modernize-use-auto]
+        uint64_t shortest =
+        ^~~~~~~~
+        auto
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4715:68: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to 'double' [cppcoreguidelines-narrowing-conversions]
+            static_cast<uint64_t>(static_cast<double>(file_size) / max_replication_bytes * (1000 * 1000));
+                                                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4758:15: warning: variable 'state' is not initialized [cppcoreguidelines-init-variables]
+      int64_t state;
+              ^
+                    = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4786:40: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+        output->append(Redis::MultiLen(infos.size()));
+                                       ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4788:42: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+          output->append(Redis::MultiLen(info.nodes.size() + 2));
+                                         ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4904:61: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      Status s = svr->cluster_->SetClusterNodes(nodes_str_, set_version_, force_);
+                                                            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4918:61: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      Status s = svr->cluster_->SetSlot(slot_id_, args_[4], set_version_);
+                                                            ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:4925:19: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      int64_t v = svr->cluster_->GetVersion();
+                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5013:33: warning: narrowing conversion from 'unsigned long' to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      *output = Redis::MultiLen(args_.size() - 2);
+                                ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5058:16: warning: variable 'max_len_idx' is not initialized [cppcoreguidelines-init-variables]
+        size_t max_len_idx;
+               ^
+                           = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5087:16: warning: variable 'min_id_idx' is not initialized [cppcoreguidelines-init-variables]
+        size_t min_id_idx;
+               ^
+                          = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5205:14: warning: variable 'deleted' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t deleted;
+             ^
+                     = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5211:30: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    *output = Redis::Integer(deleted);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5224:14: warning: variable 'len' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t len;
+             ^
+                 = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5230:30: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    *output = Redis::Integer(len);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5286:35: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::Integer(info.size));
+                                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5292:35: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::Integer(info.entries_added));
+                                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5314:38: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(info.entries.size()));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5396:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(result.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5486:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(result.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5631:36: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output->append(Redis::MultiLen(results.size()));
+                                   ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5636:38: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output->append(Redis::MultiLen(result.entries.size()));
+                                     ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5742:35: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    output.append(Redis::MultiLen(results.size()));
+                                  ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5747:37: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+      output.append(Redis::MultiLen(result.entries.size()));
+                                    ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5812:14: warning: variable 'max_len_idx' is not initialized [cppcoreguidelines-init-variables]
+      size_t max_len_idx;
+             ^
+                         = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5831:14: warning: variable 'min_id_idx' is not initialized [cppcoreguidelines-init-variables]
+      size_t min_id_idx;
+             ^
+                        = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5877:14: warning: variable 'removed' is not initialized [cppcoreguidelines-init-variables]
+    uint64_t removed;
+             ^
+                     = 0
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:5883:30: warning: narrowing conversion from 'uint64_t' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+    *output = Redis::Integer(removed);
+                             ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:6160:32: warning: narrowing conversion from 'std::map<std::basic_string<char>, const Redis::CommandAttributes *>::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  info->append(Redis::MultiLen(original_commands.size()));
+                               ^
+/home/runner/work/incubator-kvrocks/incubator-kvrocks/src/commands/redis_cmd.cc:6169:32: warning: narrowing conversion from 'std::vector::size_type' (aka 'unsigned long') to signed type 'int64_t' (aka 'long') is implementation-defined [cppcoreguidelines-narrowing-conversions]
+  info->append(Redis::MultiLen(cmd_names.size()));
+                               ^
+$ /usr/bin/run-clang-tidy-12 -p build -clang-tidy-binary /usr/bin/clang-tidy-12 -j2 kvrocks/src/
+
